@@ -3,7 +3,7 @@ This is the sample application for Dylan Beattie's workshop on distributed syste
 
 ## Getting Started
 
-Run the `Autobarn.Website` project. *(The sample projects are configured for .NET 5.0, but will run on .NET Core 3.1 or Framework 4.6 if you modify the .csproj files to change the project targets - see below)*
+Run the `Autobarn.Website` project. *(The sample projects are configured for .NET Core 3.1, but will run on .NET 5/6 or Framework 4.6 if you modify the .csproj files to change the project targets - see below)*
 
 ```
 cd dotnet
@@ -35,11 +35,13 @@ You'll need to edit `Autobarn.Website\Autobarn.Website.csproj` and `Autobarn.Dat
 
 Find the line:
 
-`<TargetFramework>net5.0</TargetFramework>`
+`<TargetFramework>netcoreapp3.1</TargetFramework>`
 
 To run on .NET Framework 4.6, change this to: `<TargetFramework>net46</TargetFramework>`
 
-To run on .NET Core 3.1, change this to: `<TargetFramework>netcoreapp3.1</TargetFramework>`
+To run on .NET 5, change this to: `<TargetFramework>net5.0</TargetFramework>`
+
+To run on .NET 6, change this to: `<TargetFramework>net6.0</TargetFramework>`
 
 (You can see a full list of .NET versions and target frameworks at [https://docs.microsoft.com/en-us/dotnet/standard/frameworks](https://docs.microsoft.com/en-us/dotnet/standard/frameworks))
 
