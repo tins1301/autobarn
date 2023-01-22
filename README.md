@@ -43,6 +43,8 @@ To run on .NET 5, change this to: `<TargetFramework>net5.0</TargetFramework>`
 
 To run on .NET 6, change this to: `<TargetFramework>net6.0</TargetFramework>`
 
+To run on .NET 7, change this to: `<TargetFramework>net7.0</TargetFramework>`
+
 (You can see a full list of .NET versions and target frameworks at [https://docs.microsoft.com/en-us/dotnet/standard/frameworks](https://docs.microsoft.com/en-us/dotnet/standard/frameworks))
 
 ### Using MS SQL Server
