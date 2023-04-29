@@ -35,7 +35,7 @@ You'll need to edit `Autobarn.Website\Autobarn.Website.csproj` and `Autobarn.Dat
 
 Find the line:
 
-`<TargetFramework>netcoreapp3.1</TargetFramework>`
+`<TargetFramework>net6.0</TargetFramework>`
 
 To run on .NET Framework 4.6, change this to: `<TargetFramework>net46</TargetFramework>`
 
