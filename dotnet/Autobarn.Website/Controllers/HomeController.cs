@@ -1,27 +1,27 @@
-﻿using Autobarn.Website.Models;
+using Autobarn.Website.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
-namespace Autobarn.Website.Controllers {
-	public class HomeController : Controller {
-		private readonly ILogger<HomeController> _logger;
+namespace Autobarn.Website.Controllers; 
 
-		public HomeController(ILogger<HomeController> logger) {
-			_logger = logger;
-		}
+public class HomeController : Controller {
+	private readonly ILogger<HomeController> _logger;
 
-		public IActionResult Index() {
-			return View();
-		}
+	public HomeController(ILogger<HomeController> logger) {
+		_logger = logger;
+	}
 
-		public IActionResult Privacy() {
-			return View();
-		}
+	public IActionResult Index() {
+		return View();
+	}
 
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-		public IActionResult Error() {
-			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-		}
+	public IActionResult Privacy() {
+		return View();
+	}
+
+	[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+	public IActionResult Error() {
+		return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 	}
 }
