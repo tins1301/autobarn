@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using System;
 
 namespace Autobarn.Website; 
@@ -22,6 +23,18 @@ public class Startup {
 		services.AddRouting(options => options.LowercaseUrls = true);
 		services.AddControllersWithViews().AddNewtonsoftJson();
 		services.AddRazorPages().AddRazorRuntimeCompilation();
+
+		services.AddControllersWithViews().AddNewtonsoftJson();
+		services.AddSwaggerGen(options => {
+			options.SwaggerDoc("v1", new OpenApiInfo {
+				Version = "v1",
+				Title = "Autobarn API",
+				Description = "The Autobarn vehicle platform API"
+			});
+		});
+		services.AddSwaggerGenNewtonsoftSupport();
+		services.AddRazorPages().AddRazorRuntimeCompilation();
+
 		Console.WriteLine(DatabaseMode);
 		switch (DatabaseMode) {
 			case "sql":
@@ -47,6 +60,10 @@ public class Startup {
 		app.UseStaticFiles();
 		app.UseRouting();
 		app.UseAuthorization();
+
+		app.UseSwagger();
+		app.UseSwaggerUI();
+
 		app.UseEndpoints(endpoints => {
 			endpoints.MapControllerRoute(
 				name: "default",

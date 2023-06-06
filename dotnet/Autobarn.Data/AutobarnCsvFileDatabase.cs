@@ -112,5 +112,5 @@ public class AutobarnCsvFileDatabase : IAutobarnDatabase {
 		var model = FindModel(vehicle.ModelCode);
 		model.Vehicles.Remove(vehicle);
 		vehicles.Remove(vehicle.Registration);
-	}
+	}	
 }
